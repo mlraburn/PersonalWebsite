@@ -11,7 +11,7 @@ export default function HomePage(): JSX.Element {
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 6.5V9H21ZM3 9V7L9 6.5V9H3ZM12 8C12.8 8 13.6 8.2 14.3 8.5L15.9 12.8C16.1 13.5 15.6 14.2 14.8 14.2H13V22H11V14.2H9.2C8.4 14.2 7.9 13.5 8.1 12.8L9.7 8.5C10.4 8.2 11.2 8 12 8Z"/>
               </svg>
-              <span className="text-xl font-bold tracking-wider">YOUR NAME</span>
+              <span className="text-xl font-bold tracking-wider">Matt Raburn</span>
             </div>
 
             {/* Navigation */}
@@ -38,18 +38,19 @@ export default function HomePage(): JSX.Element {
               {/* Left side - Text content */}
               <div className="lg:w-1/2 mb-12 lg:mb-0">
                 <h1 className="text-5xl lg:text-7xl font-bold text-slate-800 mb-6 tracking-wide">
-                  YOUR NAME
+                  Matt Raburn
                 </h1>
                 <h2 className="text-2xl lg:text-3xl text-slate-700 mb-4 font-medium">
-                  Navy Officer
+                  LCDR Cryptologic Warfare Officer, USN
                 </h2>
                 <h3 className="text-xl lg:text-2xl text-slate-700 mb-8 font-medium">
-                  & Project Manager
+                  Extensive Leadership Experience | Software Development | Advanced Technical Solutions
                 </h3>
 
                 <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">
-                  Experienced leader with a strong background in project management and operations.
-                  Dedicated to service and excellence.
+                  Proven leader with 12+ years solving the most complex technical challenges across intelligence programs,
+                  leading teams of 120+ personnel in global operations, and developing innovative software solutions
+                  that deliver mission-critical capabilities to warfighters and the Intelligence Community.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
