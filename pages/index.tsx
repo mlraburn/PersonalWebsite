@@ -20,6 +20,7 @@ export default function HomePage(): JSX.Element {
               <a href="#experience" className="hover:text-amber-200 transition-colors font-medium">Experience</a>
               <a href="#projects" className="hover:text-amber-200 transition-colors font-medium">Projects</a>
               <a href="#contact" className="hover:text-amber-200 transition-colors font-medium">Contact</a>
+              <p>[Moon]</p>
             </div>
 
             {/* Mobile menu button */}
