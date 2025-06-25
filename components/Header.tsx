@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface HeaderProps {
     isDarkMode: boolean;
@@ -6,8 +6,25 @@ interface HeaderProps {
 }
 
 export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
+    // animation completion states
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const animateToggle = () => {
+        setIsAnimating(true);
+
+        // after animation set back to false
+        setTimeout(() => {
+           setIsAnimating(false);
+        }, 1000);
+
+        // then small timeout to finally convert to dark mode
+        setTimeout(() => {
+            setIsDarkMode(!isDarkMode);
+        }, 500);
+    }
+
     return (
-        <header className="bg-slate-800 shadow-lg sticky top-0 z-50">
+        <header className="bg-slate-800 shadow-lg sticky top-0 z-50 overflow-hidden">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo with Anchor */}
                 <div className="flex items-center space-x-3 text-white">
@@ -23,18 +40,26 @@ export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
                     <a href="#experience" className="hover:text-amber-200 transition-colors font-medium">Experience</a>
                     <a href="#projects" className="hover:text-amber-200 transition-colors font-medium">Projects</a>
                     <a href="#contact" className="hover:text-amber-200 transition-colors font-medium">Contact</a>
-                    <button onClick={() => setIsDarkMode(!isDarkMode)} className="text-white hover:text-amber-200 transition-colors ml-4">
-                        {isDarkMode ? (
-                            // Display sun when in dark mode
-                            <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                            </svg>
-                        ) : (
-                            // Display moon when in light mode
-                            <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                            </svg>
-                        )}
+                    <button
+                        onClick={() => animateToggle()}
+                        className="text-white hover:text-amber-200 transition-colors ml-4 relative">
+                        {/*Animation Div*/}
+                        <div
+                            className={`transition-transform ${isAnimating ? 'animate-spin' : ''}`}
+                            style={{ transformOrigin: '50% calc(100% + 1rem)' }}
+                        >
+                            {isDarkMode ? (
+                                // Display sun when in dark mode
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            ) : (
+                                // Display moon when in light mode
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                                </svg>
+                            )}
+                        </div>
                     </button>
                 </div>
 
