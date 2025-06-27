@@ -44,9 +44,11 @@ export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
                         onClick={() => animateToggle()}
                         className="text-white hover:text-amber-200 transition-colors ml-4 relative">
                         {/*Animation Div*/}
-                        <div
-                            className={`transition-transform ${isAnimating ? 'animate-spin' : ''}`}
-                            style={{ transformOrigin: '50% calc(100% + 1rem)' }}
+                        <div // animate-reverse-spin is a custom animation in globall.css
+                            className={`transition-transform ${isAnimating ? 'animate-reverse-spin' : ''}`}
+                            style={{
+                                transformOrigin: '50% calc(100% + 1rem)',
+                            }}
                         >
                             {isDarkMode ? (
                                 // Display sun when in dark mode
