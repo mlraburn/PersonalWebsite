@@ -5,7 +5,7 @@ interface HeaderProps {
     setIsDarkMode: (value: boolean) => void;
 }
 
-export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
+const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
     // animation completion states
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -74,4 +74,6 @@ export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
             </nav>
         </header>
     );
-}
+};
+
+export default Header;
