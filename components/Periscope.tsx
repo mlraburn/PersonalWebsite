@@ -1,17 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
-const Periscope: React.FC<PeriscopeProps> = ({ children }) => {
+const Periscope: React.FC<PeriscopeProps> = () => {
+    // where the mouse is
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    // where the periscope is
+    const [periscopePosition, setPeriscopePosition] = useState({ x: 0 , y: 0});
+
+    //
+
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-          setMousePosition({ x: e.clientX, y: e.clientY });
+            setMousePosition({ x: e.clientX, y: e.clientY });
+
+            // calcualate the angle to move based on new mouse position
+            const deltaX = e.clientX - periscopePosition.x;
+            const deltaY = e.clientY - periscopePosition.y;
+            const angle = Math.atan2(deltaY, deltaX);
+
+
         };
 
         window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove);
 
     }, []);
+
+
 
     return (
         <div
