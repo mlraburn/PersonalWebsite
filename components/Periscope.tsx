@@ -1,40 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Periscope: React.FC<PeriscopeProps> = () => {
-    // where the mouse is
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    // where the periscope is
     const [periscopePosition, setPeriscopePosition] = useState({ x: 0 , y: 0});
-
-    //
+    const mousePosition = useRef({x: 0, y: 0});
+    const animationRef = useRef<number>();
 
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+            mousePosition.current = {x: e.clientX, y: e.clientY};
+        };
 
-            // calcualate the angle to move based on new mouse position
-            const deltaX = e.clientX - periscopePosition.x;
-            const deltaY = e.clientY - periscopePosition.y;
-            const angle = Math.atan2(deltaY, deltaX);
+        // animation of periscope
+        const animatePeriscope = () => {
+
+            // move periscope to new position
+            setPeriscopePosition(current => {
+                // calcualate the angle to move based on new mouse position
+
+                const deltaX = mousePosition.current.x - current.x;
+                const deltaY = mousePosition.current.y - current.y;
 
 
+                // calculate the distance to the mouse position
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                if (distance > 20) {
+                    // calculate the degrees of the angle to the mouse position
+                    const angle = Math.atan2(deltaY, deltaX);
+                    const stepSize = 2;
+                    return {
+                        x: current.x + Math.cos(angle) * stepSize,
+                        y: current.y + Math.sin(angle) * stepSize
+                    };
+                }
+                return current;
+            });
+
+            animationRef.current = requestAnimationFrame(animatePeriscope);
         };
 
         window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+        animatePeriscope();
 
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+            }
+        };
     }, []);
-
-
 
     return (
         <div
-            className="fixed pointer-events-none z-[100] transition-all duration-75 ease-out"
+            className="fixed pointer-events-none z-[100]"
             style={{
-                left: mousePosition.x - 15, // Center the 30px wide SVG
-                top: mousePosition.y - 15,  // Center the 30px tall SVG
+                left: periscopePosition.x - 15, // Center the 30px wide SVG
+                top: periscopePosition.y - 15,  // Center the 30px tall SVG
             }}
         >
             <svg
