@@ -39,12 +39,10 @@ const Periscope: React.FC<PeriscopeProps> = () => {
 
                 if (distance < 50) {
                     // periscope disappears
-                    //setIsVisible(false);
                     setDipAmount(20);
                 } else {
                     // outside of 50 distance
                     // periscope re-appears
-                    //setIsVisible(true);
                     setDipAmount(0);
                 }
 
