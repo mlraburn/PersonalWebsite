@@ -25,6 +25,19 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, onViewProjects, onDownloadResum
                       <h3 className={`text-xl lg:text-2xl ${isDarkMode ? 'text-gray-300' : 'text-slate-700'} mb-8 font-medium`}>
                           Extensive Leadership Experience | Software Development | Advanced Technical Solutions
                       </h3>
+                      <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">
+                          Proven leader with 12+ years solving the most complex technical challenges across intelligence programs,
+                          leading teams of various sizes including a team of 120+ world-wide deploying Sailors, and developing innovative software solutions
+                          that deliver mission-critical capabilities to warfighters and the Intelligence Community.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-4">
+                          <button className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                              View projects
+                          </button>
+                          <button className="border-2 border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                              Download Resume
+                          </button>
+                      </div>
                   </div>
 
               </div>
