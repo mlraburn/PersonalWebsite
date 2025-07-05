@@ -33,3 +33,19 @@ body {
 .animate-reverse-spin {
   animation: reverse-spin 1s linear;
 }
+
+@keyframes infinite-scroll {
+  to {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 10s linear infinite;
+  --gap: 2rem;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
