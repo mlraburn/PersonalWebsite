@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Periscope from '../components/Periscope';
 import About from '../components/About';
 import Experience from '../components/Experience';
+import Projects from '../components/Projects';
 
 export default function HomePage(): JSX.Element {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,8 +18,8 @@ export default function HomePage(): JSX.Element {
               {/*Add section for tech stack*/}
             <About isDarkMode={isDarkMode} />
             <Experience isDarkMode={isDarkMode} />
-            {/*Projects />
-            <Contact />
+            <Projects isDarkMode={isDarkMode} />
+            {/*<Contact />
             <Footer />*/}
           </div>
       </>

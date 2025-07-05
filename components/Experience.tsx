@@ -35,7 +35,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                    <div className={`${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
                                         <h4 className="font-semibold mb-2">Computer Science Graduate</h4>
                                         <p className="text-sm mb-2">Bachelor of Science in Computer Science from the United States Naval Academy</p>
                                         <ul className="text-xs space-y-1">
@@ -61,7 +61,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                    <div className={`${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
                                         <h4 className="font-semibold mb-2">Direct Support Officer - Submarines</h4>
                                         <p className="text-sm mb-2">Led specialized teams of 22+ personnel on multiple submarine deployments</p>
                                         <ul className="text-xs space-y-1">
@@ -86,8 +86,8 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
-                                        <h4 className="font-semibold mb-2">Department Head - 120+ Personnel</h4>
+                                    <div className={`${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                        <h4 className="font-semibold mb-2">Department Head - Submarine Operations</h4>
                                         <p className="text-sm mb-2">Led submarine operations department with 11 officers and 120+ Sailors deploying worldwide.</p>
                                         <ul className="text-xs space-y-1">
                                             <li>• Full administrative and operational responsibility for department</li>
@@ -112,7 +112,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                    <div className={`${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
                                         <h4 className="font-semibold mb-2">Intelligence Planning Officer & Acquisition Officer</h4>
                                         <p className="text-sm mb-2">Special Advisor to CNO for cryptologic operations and national-level program management.</p>
                                         <ul className="text-xs space-y-1">
@@ -133,18 +133,18 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                     </div>
                                     <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} text-center mb-2`}>Developer & PM</h3>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NRO</p>
-                                    <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>2022 - Present</p>
+                                    <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>2022 - September 2025</p>
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
-                                        <h4 className="font-semibold mb-2">Operations Support & Metrics Chief</h4>
-                                        <p className="text-sm mb-2">Leading operations support for multi-billion dollar satellite ground systems serving IC and DoD worldwide.</p>
+                                    <div className={`${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                        <h4 className="font-semibold mb-2">Software Developer | Data Analytics Lead | PM</h4>
+                                        <p className="text-sm mb-2">Developed breakthrough analytics while leading technical teams and managing enterprise systems serving IC and DoD worldwide.</p>
                                         <ul className="text-xs space-y-1">
-                                            <li>• Created breakthrough analytic capability for entire IC/DoD</li>
-                                            <li>• Led 30+ person global tradecraft support team</li>
-                                            <li>• Authored 30+ reports, 4 briefed to DNI</li>
-                                            <li>• Established 24/7 operations support desk</li>
+                                            <li>• Built web app delivering an innovative analytic capability to entire IC/DoD</li>
+                                            <li>• Led 30+ person tradecraft support team</li>
+                                            <li>• Authored 45+ strategic articles with 7 briefed to ODNI</li>
+                                            <li>• Established and Led a 24/7 support desk ensuring mission-critical applications stay available worldwide</li>
                                         </ul>
                                         <div className={`absolute top-full left-1/2 transform -translate-x-1/2 border-l-8 border-r-8 border-t-8 border-transparent ${isDarkMode ? 'border-t-slate-700' : 'border-t-slate-800'}`}></div>
                                     </div>
@@ -154,23 +154,24 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                             {/* Future Opportunity */}
                             <div className="relative group">
                                 <div className="flex flex-col items-center">
-                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative border-2 ${isDarkMode ? 'border-amber-400' : 'border-amber-500'}`}>
+                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative border-2 ${isDarkMode ? 'border-amber-400' : 'border-amber-600'}`}>
                                         🚀
                                     </div>
-                                    <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-amber-400' : 'text-slate-800'} text-center mb-2`}>Next Challenge</h3>
+                                    <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'} text-center mb-2`}>Next Challenge</h3>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>Ready to Lead</p>
                                     <p className={`text-xs ${isDarkMode ? 'text-amber-400' : 'text-amber-600'} font-medium`}>2025+</p>
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                                    <div className={`${isDarkMode ? 'bg-gradient-to-br from-amber-600 to-orange-600' : 'bg-gradient-to-br from-slate-800 to-slate-900'} text-white p-4 rounded-lg shadow-xl w-80`}>
+                                    <div className={`${isDarkMode ? 'bg-gradient-to-br from-amber-600 to-orange-600' : 'bg-gradient-to-br from-amber-600 to-orange-600'} text-white p-4 rounded-lg shadow-xl w-80`}>
                                         <h4 className="font-semibold mb-2">What I Bring to Your Organization</h4>
-                                        <p className="text-sm mb-2">Proven ability to lead complex technical programs while maintaining hands-on expertise and driving innovation.</p>
+                                        <p className="text-sm mb-2">Proven ability to lead complex technical programs while maintaining hands-on expertise and driving innovation</p>
                                         <ul className="text-xs space-y-1">
-                                            <li>• Multi-level leadership from 20 to 120+ personnel</li>
-                                            <li>• Program management of multi-million dollar initiatives</li>
-                                            <li>• Breakthrough software development capabilities</li>
-                                            <li>• Crisis management and 24/7 operations experience</li>
+                                            <li>• Decade+ of Multi-level leadership experience from 20 to 120+ personnel</li>
+                                            <li>• Program management and acquisition experience for $100M+ dollar initiatives</li>
+                                            <li>• Full-stack development experience with proven ability to solve complex technical challenges</li>
+                                            <li>• Expert in data collection, analysis, and visualization for business intelligence and decision-making</li>
+                                            <li>• System availability and 24/7 operations management experience</li>
                                         </ul>
                                         <div className={`absolute top-full left-1/2 transform -translate-x-1/2 border-l-8 border-r-8 border-t-8 border-transparent ${isDarkMode ? 'border-t-orange-600' : 'border-t-slate-900'}`}></div>
                                     </div>
