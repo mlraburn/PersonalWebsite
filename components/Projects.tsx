@@ -16,11 +16,12 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
 
                     {/* Matt's March Madness */}
                     <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                        <div className={`h-48 ${isDarkMode ? 'bg-gradient-to-br from-orange-600 to-red-600' : 'bg-gradient-to-br from-orange-500 to-red-500'} rounded-lg mb-6 flex items-center justify-center text-white`}>
-                            <div className="text-center">
-                                <div className="text-3xl mb-2">🏀</div>
-                                <span className="text-sm font-medium">March Madness Analytics</span>
-                            </div>
+                        <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                            <img
+                                src="/MattsMarchMadness.png"
+                                alt="Matt's March Madness Bracket Simulator"
+                                className="w-full h-full object-contain bg-blue-900"
+                            />
                         </div>
                         <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Matt's March Madness</h3>
                         <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
@@ -39,13 +40,14 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
 
                     {/* HoverView */}
                     <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                        <div className={`h-48 ${isDarkMode ? 'bg-gradient-to-br from-blue-600 to-purple-600' : 'bg-gradient-to-br from-blue-500 to-purple-500'} rounded-lg mb-6 flex items-center justify-center text-white`}>
-                            <div className="text-center">
-                                <div className="text-3xl mb-2">👁️</div>
-                                <span className="text-sm font-medium">Data Visualization</span>
-                            </div>
+                        <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                            <img
+                                src="/HOVerview%20Logo%20Transparent.png"
+                                alt="HOV-erview"
+                                className="w-full h-full object-contain bg-green-600"
+                            />
                         </div>
-                        <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>HoverView</h3>
+                        <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>HOV-erview</h3>
                         <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
                             Advanced data visualization tool that provides interactive hover insights and detailed analytics
                             overlays for complex datasets, enabling rapid data exploration and pattern recognition.
@@ -62,11 +64,12 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
 
                     {/* JSON Explorer */}
                     <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                        <div className={`h-48 ${isDarkMode ? 'bg-gradient-to-br from-green-600 to-teal-600' : 'bg-gradient-to-br from-green-500 to-teal-500'} rounded-lg mb-6 flex items-center justify-center text-white`}>
-                            <div className="text-center">
-                                <div className="text-3xl mb-2">🔍</div>
-                                <span className="text-sm font-medium">JSON Analysis</span>
-                            </div>
+                        <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                            <img
+                                src="/json%20explore%20logo.png"
+                                alt="json explore logo"
+                                className="w-full h-full object-contain bg-slate-900"
+                            />
                         </div>
                         <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explorer</h3>
                         <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
