@@ -30,7 +30,7 @@ const Periscope: React.FC<PeriscopeProps> = () => {
                 if (distance > 100) {
                     // calculate the degrees of the angle to the mouse position
                     const angle = Math.atan2(deltaY, deltaX);
-                    const stepSize = 2;
+                    const stepSize = .5;
                     return {
                         x: current.x + Math.cos(angle) * stepSize,
                         y: current.y + Math.sin(angle) * stepSize
