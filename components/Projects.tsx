@@ -33,7 +33,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                         {/* First Set Div*/}
                         <div className="flex gap-8 w-1/2">
                             {/* Matt's March Madness */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <a
                                     href="https://mattsmarchmadness.com"
                                     target="_blank"
@@ -65,14 +65,14 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     href="https://mattsmarchmadness.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors inline-block`}
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
                                 >
                                     Visit →
                                 </a>
                             </div>
 
                             {/* HoverView */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <a
                                     href="https://hoverview.app"
                                     target="_blank"
@@ -105,38 +105,52 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     href="https://hoverview.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
                                 >
                                     Visit →
                                 </a>
                             </div>
 
                             {/* JSON Explorer */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/json%20explore%20logo.png"
-                                        alt="json explore logo"
-                                        className="w-full h-full object-contain bg-slate-900"
-                                    />
-                                </div>
-                                <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explorer</h3>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
+                                <a
+                                    href="https://pypi.org/project/json-explore/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                                        <img
+                                            src="/json%20explore%20logo.png"
+                                            alt="json explore logo"
+                                            className="w-full h-full object-contain bg-slate-900"
+                                        />
+                                    </div>
+                                </a>
+                                <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explore</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Powerful JSON data exploration and analysis tool featuring tree visualization, search capabilities,
-                                    and schema analysis for efficiently navigating complex nested data structures.
+                                    Lightweight CLI JSON navigator: Python package allowing user to navigate JSON's and
+                                    dictionaries like file tree's.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Node.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>JSON</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>CLI Tool</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>PyPI Package</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tree Visualization</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://pypi.org/project/json-explore/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* Portfolio Website */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
                                     <img
                                         src="/Personal%20Logo.png"
@@ -146,15 +160,18 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                 </div>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Professional Portfolio</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Modern, responsive portfolio website showcasing professional experience, projects, and technical skills.
-                                    Features dark mode, interactive timeline, infinite scroll, and custom animations.
+                                    Modern, responsive portfolio website showcasing professional experience, projects,
+                                    and technical skills. Features dark mode, interactive timeline, infinite scroll,
+                                    custom animations, and metrics.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>React</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>TypeScript</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tailwind CSS</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Next.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>MongoDB</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
+                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}>
                                     Learn More →
                                 </button>
                             </div>
@@ -162,7 +179,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                         {/* Second Set Div*/}
                         <div className="flex gap-8 w-1/2">
                             {/* Matt's March Madness */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <a
                                     href="https://mattsmarchmadness.com"
                                     target="_blank"
@@ -188,19 +205,20 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Flask</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>CSV Data Mangement</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>GCP</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Docker</span>
                                 </div>
                                 <a
                                     href="https://mattsmarchmadness.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors inline-block`}
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
                                 >
                                     Visit →
                                 </a>
                             </div>
 
                             {/* HoverView */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <a
                                     href="https://hoverview.app"
                                     target="_blank"
@@ -233,38 +251,52 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     href="https://hoverview.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
                                 >
                                     Visit →
                                 </a>
                             </div>
 
                             {/* JSON Explorer */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/json%20explore%20logo.png"
-                                        alt="json explore logo"
-                                        className="w-full h-full object-contain bg-slate-900"
-                                    />
-                                </div>
-                                <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explorer</h3>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
+                                <a
+                                    href="https://pypi.org/project/json-explore/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                                        <img
+                                            src="/json%20explore%20logo.png"
+                                            alt="json explore logo"
+                                            className="w-full h-full object-contain bg-slate-900"
+                                        />
+                                    </div>
+                                </a>
+                                <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explore</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Powerful JSON data exploration and analysis tool featuring tree visualization, search capabilities,
-                                    and schema analysis for efficiently navigating complex nested data structures.
+                                    Lightweight CLI JSON navigator: Python package allowing user to navigate JSON's and
+                                    dictionaries like file tree's.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Node.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>JSON</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>CLI Tool</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>PyPI Package</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tree Visualization</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://pypi.org/project/json-explore/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* Portfolio Website */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
                                     <img
                                         src="/Personal%20Logo.png"
@@ -282,7 +314,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>TypeScript</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tailwind CSS</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
+                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}>
                                     Learn More →
                                 </button>
                             </div>

@@ -49,3 +49,7 @@ body {
   animation-play-state: paused;
 }
 
+.font-courier {
+  font-family: 'Courier New', 'Courier', monospace;
+}
+
