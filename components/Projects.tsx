@@ -34,50 +34,81 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                         <div className="flex gap-8 w-1/2">
                             {/* Matt's March Madness */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/MattsMarchMadness.png"
-                                        alt="Matt's March Madness Bracket Simulator"
-                                        className="w-full h-full object-contain bg-blue-900"
-                                    />
-                                </div>
+                                <a
+                                    href="https://mattsmarchmadness.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                                        <img
+                                            src="/MattsMarchMadness.png"
+                                            alt="Matt's March Madness Bracket Simulator"
+                                            className="w-full h-full object-contain bg-blue-900"
+                                        />
+                                    </div>
+                                </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Matt's March Madness</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Interactive web application for NCAA tournament bracket analysis featuring data visualization,
-                                    team performance metrics, and predictive modeling for tournament outcomes.
+                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allow users to
+                                    create brackets based on ELO scores and save their brackets for later.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>React</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Data Analytics</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Sports API</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Javascript</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Flask</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>CSV Data Mangement</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>GCP</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Docker</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://mattsmarchmadness.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors inline-block`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* HoverView */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/HOVerview%20Logo%20Transparent.png"
-                                        alt="HOV-erview"
-                                        className="w-full h-full object-contain bg-green-600"
-                                    />
-                                </div>
+                                <a
+                                    href="https://hoverview.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                                        <img
+                                            src="/HOVerview%20Logo%20Transparent.png"
+                                            alt="HOV-erview"
+                                            className="w-full h-full object-contain bg-green-600"
+                                        />
+                                    </div>
+                                </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>HOV-erview</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Advanced data visualization tool that provides interactive hover insights and detailed analytics
-                                    overlays for complex datasets, enabling rapid data exploration and pattern recognition.
+                                    Want to use the express lane but don't know what direction its going? The
+                                    HOV-erview PWA has got you covered. PWA does one thing and one thing well - for
+                                    Virginia 95 Express
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>JavaScript</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>D3.js</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Data Viz</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Node.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Express</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Javascript</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>PWA</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Service Workers</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>API Integration</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://hoverview.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* JSON Explorer */}
@@ -132,50 +163,80 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                         <div className="flex gap-8 w-1/2">
                             {/* Matt's March Madness */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/MattsMarchMadness.png"
-                                        alt="Matt's March Madness Bracket Simulator"
-                                        className="w-full h-full object-contain bg-blue-900"
-                                    />
-                                </div>
+                                <a
+                                    href="https://mattsmarchmadness.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                                        <img
+                                            src="/MattsMarchMadness.png"
+                                            alt="Matt's March Madness Bracket Simulator"
+                                            className="w-full h-full object-contain bg-blue-900"
+                                        />
+                                    </div>
+                                </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Matt's March Madness</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Interactive web application for NCAA tournament bracket analysis featuring data visualization,
-                                    team performance metrics, and predictive modeling for tournament outcomes.
+                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allow users to
+                                    create brackets based on ELO scores and save their brackets for later.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>React</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Data Analytics</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Sports API</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Javascript</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Flask</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>CSV Data Mangement</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>GCP</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://mattsmarchmadness.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors inline-block`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* HoverView */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow`}>
-                                <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/HOVerview%20Logo%20Transparent.png"
-                                        alt="HOV-erview"
-                                        className="w-full h-full object-contain bg-green-600"
-                                    />
-                                </div>
+                                <a
+                                    href="https://hoverview.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
+                                        <img
+                                            src="/HOVerview%20Logo%20Transparent.png"
+                                            alt="HOV-erview"
+                                            className="w-full h-full object-contain bg-green-600"
+                                        />
+                                    </div>
+                                </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>HOV-erview</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Advanced data visualization tool that provides interactive hover insights and detailed analytics
-                                    overlays for complex datasets, enabling rapid data exploration and pattern recognition.
+                                    Want to use the express lane but don't know what direction its going? The
+                                    HOV-erview PWA has got you covered. PWA does one thing and one thing well - for
+                                    Virginia 95 Express
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>JavaScript</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>D3.js</span>
-                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Data Viz</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Node.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Express</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Javascript</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>PWA</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Service Workers</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>API Integration</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://hoverview.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors`}
+                                >
+                                    Visit →
+                                </a>
                             </div>
 
                             {/* JSON Explorer */}

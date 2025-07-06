@@ -38,10 +38,11 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                                     What Makes Me Special
                                 </h3>
                                 <p className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} leading-relaxed`}>
-                                    While many leaders transition from hands-on work to meetings and documentation, I maintain both.
-                                    I can lead strategically while still creating with my hands, learning how operators perform,
-                                    and making breakthroughs in process and design. This multi-level capability gives me an
-                                    incredible ability to lead by example and optimize decision-making context.
+                                    While many leaders transition from hands-on work to meetings and decision-making, I
+                                    maintain both. I can lead strategically while still creating with my
+                                    hands, learning how operators perform, and making breakthroughs in process and
+                                    design. This multi-level capability gives me an incredible ability to lead by
+                                    example and optimize team performance.
                                 </p>
                             </div>
                         </div>
