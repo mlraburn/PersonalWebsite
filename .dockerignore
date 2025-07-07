@@ -1,0 +1,14 @@
+# Build Stuff
+node_modules
+.next
+
+# Version Control
+.git
+.gitignore
+
+# Docker itself
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
