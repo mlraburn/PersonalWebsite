@@ -315,7 +315,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tailwind CSS</span>
                                 </div>
                                 <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}>
-                                    Learn More →
+                                    GitHub →
                                 </button>
                             </div>
                         </div>

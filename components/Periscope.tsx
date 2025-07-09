@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+interface PeriscopeProps {
+    isDarkMode: boolean;
+}
+
 const Periscope: React.FC<PeriscopeProps> = () => {
     const [periscopePosition, setPeriscopePosition] = useState({ x: 0 , y: 0});
     const mousePosition = useRef({x: 0, y: 0});
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | undefined>(undefined);
     const [isVisible, setIsVisible] = useState(true);
     const [dipAmount, setDipAmount] = useState(0);
 

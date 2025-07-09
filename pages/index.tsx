@@ -7,12 +7,12 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Metrics from '../components/Metrics';
 
-export default function HomePage(): JSX.Element {
+export default function HomePage(): React.JSX.Element {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
       <>
-          <Periscope />
+          <Periscope isDarkMode={isDarkMode}/>
           <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
             <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
             <Hero isDarkMode={isDarkMode} />

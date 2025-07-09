@@ -49,7 +49,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             {/* Total Visits - Largest */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
                                 <div className="flex items-center">
-                                    <span className="text-gray-500">></span>
+                                    <span className="text-gray-500">{'>'}</span>
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=total_visits --format=primary</span>
                                 </div>
                                 <div className="text-8xl font-bold mt-3 tracking-tight">
@@ -61,7 +61,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             {/* Secondary Metrics */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
                                 <div className="flex items-center">
-                                    <span className="text-gray-500">></span>
+                                    <span className="text-gray-500">{'>'}</span>
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=unique_visits_24h</span>
                                 </div>
                                 <div className="text-6xl font-bold mt-3">
@@ -73,7 +73,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             {/* Resume Downloads */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
                                 <div className="flex items-center">
-                                    <span className="text-gray-500">></span>
+                                    <span className="text-gray-500">{'>'}</span>
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=resume_downloads</span>
                                 </div>
                                 <div className="text-5xl font-bold mt-3">
@@ -85,7 +85,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             {/* Periscope Dips */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
                                 <div className="flex items-center">
-                                    <span className="text-gray-500">></span>
+                                    <span className="text-gray-500">{'>'}</span>
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=periscope_interactions</span>
                                 </div>
                                 <div className="text-5xl font-bold mt-3">
@@ -97,7 +97,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             {/* Browser Distribution */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-6`}>
                                 <div className="flex items-center">
-                                    <span className="text-gray-500">></span>
+                                    <span className="text-gray-500">{'>'}</span>
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=browser_distribution --format=table</span>
                                 </div>
                                 <div className="mt-4">
@@ -115,7 +115,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
 
                             {/* Terminal Prompt */}
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} flex items-center`}>
-                                <span className="text-gray-500">></span>
+                                <span className="text-gray-500">{'>'}</span>
                                 <span className="ml-2 text-sm opacity-60">_</span>
                                 <div className="w-2 h-5 bg-green-400 ml-1 animate-pulse"></div>
                             </div>
