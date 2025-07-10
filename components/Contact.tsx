@@ -6,25 +6,25 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     return (
-        <section id="contact" className={`py-20 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white`}>
+        <section id="contact" className={`py-10 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white`}>
             <div className="container mx-auto px-6">
-                <h2 className={`text-4xl lg:text-5xl font-bold mb-16 text-center ${isDarkMode ? 'text-white' : 'text-white'}`}>
+                <h2 className={`text-3xl lg:text-4xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-white'}`}>
                     Contact
                 </h2>
 
-                <div className="max-w-4xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-2 items-center">
                         {/* Left Column - Contact Methods */}
                         <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-semibold mb-4 text-amber-500">
+                            <h3 className="text-2xl font-semibold mb-1 text-amber-500">
                                 Let's Connect
                             </h3>
-                            <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+                            <p className="text-gray-300 mb-2 text-lg leading-relaxed">
                                 Looking forward to connecting and exploring how we can work together.
                             </p>
 
                             {/* Contact Methods */}
-                            <div className="space-y-6">
+                            <div className="space-y-4">
                                 <div className="flex items-center justify-center md:justify-start space-x-4">
                                     <svg className="w-6 h-6 text-amber-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -49,9 +49,9 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                         {/* Right Column - Social Links */}
                         <div className="flex justify-center">
                             {/* Social Links Container */}
-                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-700'} border border-slate-600 p-8 rounded-lg shadow-lg`}>
-                                <h4 className="text-lg font-semibold text-white mb-6 text-center">Connect With Me</h4>
-                                <div className="flex justify-center space-x-6">
+                            <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-slate-700'} border border-slate-600 p-6 rounded-lg shadow-lg`}>
+                                <h4 className="text-lg font-semibold text-white mb-6 text-center">Find Me Online</h4>
+                                <div className="flex justify-center space-x-8">
                                     {/* LinkedIn */}
                                     <a
                                         href="https://linkedin.com/in/matthew-raburn-76aaa746/"
