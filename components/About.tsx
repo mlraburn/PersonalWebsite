@@ -103,7 +103,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                                         <ul className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} space-y-1`}>
                                             <li>• 120+ Personnel</li>
                                             <li>• Global Operations</li>
-                                            <li>• Crisis Management</li>
+                                            <li>• TS//SCI with Polygraph</li>
                                         </ul>
                                     </div>
                                     <div>

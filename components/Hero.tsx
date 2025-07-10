@@ -9,7 +9,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ isDarkMode, onViewProjects, onDownloadResume }) => {
     return (
       // Semantic portion
-      <main className={`${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
+      <main id="hero" className={`${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
           {/*margin div*/}
           <div className="container mx-auto px-6 py-16">
               {/*layout div*/}

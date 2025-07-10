@@ -6,6 +6,7 @@ import About from '../components/About';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Metrics from '../components/Metrics';
+import Contact from '../components/Contact';
 
 export default function HomePage(): React.JSX.Element {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,8 +22,8 @@ export default function HomePage(): React.JSX.Element {
             <Experience isDarkMode={isDarkMode} />
             <Projects isDarkMode={isDarkMode} />
             <Metrics isDarkMode={isDarkMode} />
-            {/*<Contact />
-            <Footer />*/}
+            <Contact isDarkMode={isDarkMode} />
+            {/*<Footer />*/}
           </div>
       </>
   );

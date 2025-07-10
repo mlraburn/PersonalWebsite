@@ -152,11 +152,20 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                             {/* Portfolio Website */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/Personal%20Logo.png"
-                                        alt="Personal Portfolio"
-                                        className="w-full h-full object-contain bg-blue-950"
-                                    />
+                                    <a
+                                        href="https://github.com/mlraburn/PersonalWebsite"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block"
+                                    >
+                                        <div className="h-48 rounded-lg mb-6 overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img
+                                                src="/Personal%20Logo.png"
+                                                alt="Personal Portfolio Logo"
+                                                className="w-full h-full object-contain bg-blue-950"
+                                            />
+                                        </div>
+                                    </a>
                                 </div>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Professional Portfolio</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
@@ -171,9 +180,14 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Next.js</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>MongoDB</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}>
-                                    Learn More →
-                                </button>
+                                <a
+                                    href="https://github.com/mlraburn/PersonalWebsite"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
+                                >
+                                    Portfolio GitHub →
+                                </a>
                             </div>
                         </div>
                         {/* Second Set Div*/}
@@ -298,25 +312,42 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                             {/* Portfolio Website */}
                             <div className={`${isDarkMode ? 'bg-slate-700' : 'bg-amber-50'} p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1 flex flex-col`}>
                                 <div className="h-48 rounded-lg mb-6 overflow-hidden relative">
-                                    <img
-                                        src="/Personal%20Logo.png"
-                                        alt="Personal Portfolio"
-                                        className="w-full h-full object-contain bg-blue-950"
-                                    />
+                                    <a
+                                        href="https://github.com/mlraburn/PersonalWebsite"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block"
+                                    >
+                                        <div className="h-48 rounded-lg mb-6 overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity">
+                                            <img
+                                                src="/Personal%20Logo.png"
+                                                alt="Personal Portfolio Logo"
+                                                className="w-full h-full object-contain bg-blue-950"
+                                            />
+                                        </div>
+                                    </a>
                                 </div>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Professional Portfolio</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Modern, responsive portfolio website showcasing professional experience, projects, and technical skills.
-                                    Features dark mode, interactive timeline, infinite scroll, and custom animations.
+                                    Modern, responsive portfolio website showcasing professional experience, projects,
+                                    and technical skills. Features dark mode, interactive timeline, infinite scroll,
+                                    custom animations, and metrics.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>React</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>TypeScript</span>
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Tailwind CSS</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Next.js</span>
+                                    <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>MongoDB</span>
                                 </div>
-                                <button className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}>
-                                    GitHub →
-                                </button>
+                                <a
+                                    href="https://github.com/mlraburn/PersonalWebsite"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${isDarkMode ? 'text-amber-400 hover:text-amber-300' : 'text-slate-800 hover:text-slate-600'} font-semibold transition-colors mt-auto`}
+                                >
+                                    Portfolio GitHub →
+                                </a>
                             </div>
                         </div>
                     </div>
