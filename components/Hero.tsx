@@ -31,12 +31,19 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, onViewProjects, onDownloadResum
                           that deliver mission-critical capabilities to warfighters and the Intelligence Community.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4">
-                          <button className={`${isDarkMode ? 'bg-amber-600 hover:bg-amber-700' : 'bg-slate-800 hover:bg-slate-700'} text-white px-8 py-3 rounded-lg font-semibold transition-colors`}>
-                              View projects
-                          </button>
-                          <button className={`border-2 ${isDarkMode ? 'border-amber-600 text-amber-600 hover:bg-amber-600' : 'border-slate-800 text-slate-800 hover:bg-slate-800'} hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors`}>
+                          <a
+                              href="#projects"
+                              className={`inline-block ${isDarkMode ? 'bg-amber-600 hover:bg-amber-700' : 'bg-slate-800 hover:bg-slate-700'} text-white px-8 py-3 rounded-lg font-semibold transition-colors text-center`}
+                          >
+                              View Projects
+                          </a>
+                          <a
+                              href="/resume/Matt%20Raburn%20-%20Resume.pdf"
+                              download="Matt_Raburn_Resume.pdf"
+                              className={`inline-block border-2 ${isDarkMode ? 'border-amber-600 text-amber-600 hover:bg-amber-600' : 'border-slate-800 text-slate-800 hover:bg-slate-800'} hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors text-center`}
+                          >
                               Download Resume
-                          </button>
+                          </a>
                       </div>
                   </div>
 
