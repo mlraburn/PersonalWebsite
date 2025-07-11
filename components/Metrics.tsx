@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface MetricsProps {
     isDarkMode: boolean;
@@ -20,6 +20,25 @@ const mockData = {
 };
 
 const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
+
+    const [metricsData, setMetricsData] = useState({
+        totalVisits: 0
+    });
+
+    useEffect(() => {
+        const fetchMetrics = async () => {
+            try {
+                const response = await fetch('/api/metrics');
+                const data = await response.json();
+                setMetricsData(prev => ({ ...prev, totalVisits: data.totalVisits }));
+            } catch (error) {
+                console.error('Failed to fetch metrics', error);
+            }
+        };
+
+        fetchMetrics();
+    }, []);
+
     return (
         <section id="metrics" className={`py-20 ${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
             <div className="container mx-auto px-6">
@@ -53,9 +72,9 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=total_visits --format=primary</span>
                                 </div>
                                 <div className="text-8xl font-bold mt-3 tracking-tight">
-                                    {mockData.totalVisits.toLocaleString()}
+                                    {metricsData.totalVisits.toLocaleString()}
                                 </div>
-                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ All-time site visitors</div>
+                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ All-time site visits</div>
                             </div>
 
                             {/* Secondary Metrics */}
