@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Periscope from '../components/Periscope';
@@ -10,6 +10,11 @@ import Contact from '../components/Contact';
 
 export default function HomePage(): React.JSX.Element {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+    // Track visit when page loads
+    useEffect(() => {
+        fetch('/api/track-visit', { method: 'POST' });
+    }, []);
 
   return (
       <>
