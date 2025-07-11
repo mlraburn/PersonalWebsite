@@ -22,7 +22,8 @@ const mockData = {
 const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
 
     const [metricsData, setMetricsData] = useState({
-        totalVisits: 0
+        totalVisits: 0,
+        uniqueRecentVisits: 0
     });
 
     useEffect(() => {
@@ -30,7 +31,11 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
             try {
                 const response = await fetch('/api/metrics');
                 const data = await response.json();
-                setMetricsData(prev => ({ ...prev, totalVisits: data.totalVisits }));
+                setMetricsData(prev => ({
+                    ...prev,
+                    totalVisits: data.totalVisits,
+                    uniqueRecentVisits: data.uniqueRecentVisits,
+                }));
             } catch (error) {
                 console.error('Failed to fetch metrics', error);
             }
@@ -84,7 +89,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=unique_visits_24h</span>
                                 </div>
                                 <div className="text-6xl font-bold mt-3">
-                                    {mockData.uniqueVisits24h}
+                                    {metricsData.uniqueRecentVisits.toLocaleString()}
                                 </div>
                                 <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ Unique visitors last 24 hours</div>
                             </div>

@@ -17,9 +17,36 @@ export default async function handler(req, res) {
         // Count total visits
         const totalVisits = await collection.countDocuments();
 
+        /* Count unique-ish visitors in the last 24 hours */
+
+        // First get the time 24 hours ago
+        const now = new Date();
+        let twentyFourHoursAgo = new Date(now);
+        twentyFourHoursAgo.setHours(now.getHours() - 24);
+
+        // Filter out the last 24 hours of records and save as an array
+        const uniqueVisitors24Hours = await collection.aggregate([
+            {
+                $match: {
+                    timestamp: { $gte: twentyFourHoursAgo}
+                }
+            },
+            {
+                $group: {
+                    _id: {
+                        userAgent: "$userAgent",
+                        ip: "$ip"
+                    }
+                }
+            }
+        ]).toArray();
+
+        const uniqueVisitors24HoursSize = uniqueVisitors24Hours.length;
+
         // set response.json to totalVisits key with value of totalVisits
         res.status(200).json({
-            totalVisits
+            totalVisits,
+            uniqueVisitors24HoursSize
         });
 
     } catch (error) {
