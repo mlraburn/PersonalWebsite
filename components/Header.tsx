@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 interface HeaderProps {
     isDarkMode: boolean;
     setIsDarkMode: (value: boolean) => void;
-    onActivatePeriscope: () => void;
+    //onActivatePeriscope: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
