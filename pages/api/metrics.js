@@ -17,6 +17,24 @@ export default async function handler(req, res) {
         // Count total visits
         const totalVisits = await collection.countDocuments();
 
+        /* Count unique visitors of all time */
+        const uniqueVisits = await collection.aggregate([
+            {
+                $group: {
+                    _id: {
+                        userAgent: "$userAgent",
+                        ip: "$ip"
+                    }
+                }
+            },
+            {
+                $count: "uniqueCount"
+            }
+        ]).toArray();
+
+        const uniqueVisitors = uniqueVisits[0].uniqueCount;
+
+
         /* Count unique-ish visitors in the last 24 hours */
 
         // First get the time 24 hours ago
@@ -46,6 +64,7 @@ export default async function handler(req, res) {
         // set response.json to totalVisits key with value of totalVisits
         res.status(200).json({
             totalVisits,
+            uniqueVisitors,
             uniqueVisitors24HoursSize
         });
 

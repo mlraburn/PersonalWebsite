@@ -23,6 +23,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
 
     const [metricsData, setMetricsData] = useState({
         totalVisits: 0,
+        uniqueVisits: 0,
         uniqueRecentVisits: 0
     });
 
@@ -34,7 +35,8 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                 setMetricsData(prev => ({
                     ...prev,
                     totalVisits: data.totalVisits,
-                    uniqueRecentVisits: data.uniqueRecentVisits,
+                    uniqueRecentVisits: data.uniqueVisitors24HoursSize,
+                    uniqueVisits: data.uniqueVisitors
                 }));
             } catch (error) {
                 console.error('Failed to fetch metrics', error);
@@ -83,6 +85,18 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                             </div>
 
                             {/* Secondary Metrics */}
+                            {/* All Time Unique-ish Users */}
+                            <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
+                                <div className="flex items-center">
+                                    <span className="text-gray-500">{'>'}</span>
+                                    <span className="ml-2 text-sm font-courier font-semibold">query --metric=unique_visits</span>
+                                </div>
+                                <div className="text-5xl font-bold mt-3">
+                                    {metricsData.uniqueVisits.toLocaleString()}
+                                </div>
+                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ Unique all-time visits</div>
+                            </div>
+
                             <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
                                 <div className="flex items-center">
                                     <span className="text-gray-500">{'>'}</span>
@@ -91,7 +105,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                                 <div className="text-6xl font-bold mt-3">
                                     {metricsData.uniqueRecentVisits.toLocaleString()}
                                 </div>
-                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ Unique visitors last 24 hours</div>
+                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ Unique-ish visitors last 24 hours</div>
                             </div>
 
                             {/* Resume Downloads */}
@@ -104,18 +118,6 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                                     {mockData.resumeDownloads}
                                 </div>
                                 <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ PDF resume downloads</div>
-                            </div>
-
-                            {/* Periscope Dips */}
-                            <div className={`${isDarkMode ? 'text-green-400' : 'text-green-300'} mb-8`}>
-                                <div className="flex items-center">
-                                    <span className="text-gray-500">{'>'}</span>
-                                    <span className="ml-2 text-sm font-courier font-semibold">query --metric=periscope_interactions</span>
-                                </div>
-                                <div className="text-5xl font-bold mt-3">
-                                    {mockData.periscopeDips}
-                                </div>
-                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ Total periscope dips triggered</div>
                             </div>
 
                             {/* Browser Distribution */}
