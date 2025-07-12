@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
         // simulate a user clicking an a tag
         const link = document.createElement('a');
-        link.href = '/resume/Matt_Raburn_Resume.pdf';
+        link.href = '/resume/Matt%20Raburn%20-%20Resume.pdf';
         link.download = 'Matt_Raburn_Resume.pdf';
         document.body.appendChild(link); // add invisible a tag
         link.click();  // programmed click

@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 const uri = process.env.MONGODB_URI;  // gets enrionmental variable to connect to mongoDB
-const client = new MongoClient(uri);  // gets client object
+const client = new MongoClient(uri);  // gets client_page_views object
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {
@@ -9,10 +9,12 @@ export default async function handler(req, res) {
     }
 
     try {
-        /* Connect to database */
+        /* Connect to database and collections */
         await client.connect();
+
         const db = client.db('portfolio-metrics');
         const collection = db.collection('page-views');
+        const downloadCollection = db.collection('resume-downloads');
 
         /* Count All Time Visits */
         const totalVisits = await collection.countDocuments();
@@ -63,11 +65,9 @@ export default async function handler(req, res) {
         const uniqueVisitors24HoursSize = uniqueVisitors24Hours.length;
 
         /* Get Number of Downloads */
-        const downloadCollection = db.collection('resume-downloads')
 
         // get download count WARNING THIS WILL BE DIFFERENT IF WE TRY TO ADD OTHER DOWNLOADS LATER
-        const resumeDownloadCount = downloadCollection.countDocuments();
-
+        const resumeDownloadCount = await downloadCollection.countDocuments();
 
         /* set response json */
         res.status(200).json({
