@@ -16,7 +16,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                     <div className="grid md:grid-cols-2 gap-2 items-center">
                         {/* Left Column - Contact Methods */}
                         <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-semibold mb-1 text-amber-400">
+                            <h3 className="text-2xl font-semibold mb-1 text-amber-300">
                                 Let's Connect
                             </h3>
                             <p className="text-gray-300 mb-2 text-lg leading-relaxed">
@@ -31,7 +31,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
                                     </svg>
                                     <a
                                         href="mailto:matthew.raburn@gmail.com"
-                                        className="text-lg text-amber-400 hover:text-amber-300 transition-colors font-medium"
+                                        className="text-lg text-amber-300 hover:text-amber-500 transition-colors font-medium"
                                     >
                                         matthew.raburn@gmail.com
                                     </a>

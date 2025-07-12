@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 interface HeaderProps {
     isDarkMode: boolean;
     setIsDarkMode: (value: boolean) => void;
+    onActivatePeriscope: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
-    // animation completion states
+    // sun and mooon animation completion states
     const [isAnimating, setIsAnimating] = useState(false);
 
-    const animateToggle = () => {
+    const darkLightModeToggle = () => {
         setIsAnimating(true);
 
         // after animation set back to false
@@ -23,12 +24,27 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
         }, 500);
     }
 
+    // anchor animation states
+    const [isShaking, setIsShaking] = useState(false);
+
+    const anchorClick = () => {
+        setIsShaking(true); // shake the anchor
+        setTimeout(() => setIsShaking(false), 300); // stop shaking after 300 ms
+
+        // Activate the Periscope
+    };
+
     return (
         <header className="bg-slate-800 shadow-lg sticky top-0 z-50 overflow-hidden">
             <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo with Anchor */}
                 <div className="flex items-center space-x-3 text-white">
-                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                        className="w-8 h-8 cursor-pointer hover:text-amber-300 transition-colors"
+                        fill="currentColor"
+                        viewBox="0 0 64 64"
+                        onClick={anchorClick}
+                    >
                         <path d="m28.226 6.682c-.142.078-.412.236-.763.465.798.713 1.457 1.483 1.967 2.303.141-.086.229-.134.232-.135.341-.186.598-.503.711-.887.113-.383.07-.787-.121-1.139-.378-.701-1.285-1.006-2.026-.607z"/>
                         <path d="m29.249 32.036c.636.815 1.213 1.605 1.735 2.373.715-.436 1.666-.899 2.785-1.213-.477-.729-.997-1.472-1.565-2.232-1.171.206-2.189.644-2.955 1.072z"/>
                         <path d="m34.943 35.12c-.194-.344-.399-.692-.614-1.042-1.124.273-2.083.733-2.795 1.165.609.952 1.128 1.87 1.558 2.755.939-.484 1.879-.82 2.811-1-.28-.595-.582-1.197-.929-1.811-.011-.022-.022-.044-.031-.067z"/>
@@ -51,19 +67,19 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
                         <path d="m35.561 51.148c.151-.235.276-.472.41-.709-.892-.419-1.893-.702-2.991-.841-.419.636-.918 1.261-1.496 1.875.819.307 1.78.79 2.704 1.487.518-.594.977-1.198 1.373-1.812z"/>
                         <path d="m24.116 16.471c.033-.201.086-.391.134-.584-.731-.657-1.618-1.2-2.645-1.624-.184.537-.344 1.091-.443 1.681-.116.697-.144 1.415-.122 2.136l2.995-.248c-.01-.442.006-.889.081-1.361z"/>
                     </svg>
-                    <a href="#hero" className="text-xl font-bold tracking-wider hover:text-amber-200 transition-colors">Matt Raburn</a>
+                    <a href="#hero" className="text-xl font-bold tracking-wider hover:text-amber-300 transition-colors">Matt Raburn</a>
                 </div>
 
                 {/* Navigation */}
                 <div className="hidden md:flex space-x-8 text-white">
-                    <a href="#about" className="hover:text-amber-200 transition-colors font-medium">About</a>
-                    <a href="#experience" className="hover:text-amber-200 transition-colors font-medium">Experience</a>
-                    <a href="#projects" className="hover:text-amber-200 transition-colors font-medium">Projects</a>
-                    <a href="#metrics" className="hover:text-amber-200 transition-colors font-medium">Metrics</a>
-                    <a href="#contact" className="hover:text-amber-200 transition-colors font-medium">Contact</a>
+                    <a href="#about" className="hover:text-amber-300 transition-colors font-medium">About</a>
+                    <a href="#experience" className="hover:text-amber-300 transition-colors font-medium">Experience</a>
+                    <a href="#projects" className="hover:text-amber-300 transition-colors font-medium">Projects</a>
+                    <a href="#metrics" className="hover:text-amber-300 transition-colors font-medium">Metrics</a>
+                    <a href="#contact" className="hover:text-amber-300 transition-colors font-medium">Contact</a>
                     <button
-                        onClick={() => animateToggle()}
-                        className="text-white hover:text-amber-200 transition-colors ml-4 relative">
+                        onClick={() => darkLightModeToggle()}
+                        className="text-white cursor-pointer hover:text-amber-200 transition-colors ml-4 relative">
                         {/*Animation Div*/}
                         <div // animate-reverse-spin is a custom animation in globall.css
                             className={`transition-transform ${isAnimating ? 'animate-reverse-spin' : ''}`}

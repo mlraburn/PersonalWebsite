@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 interface MetricsProps {
     isDarkMode: boolean;
+    periscopeDips: number;
 }
 
 // Mock data - replace with real data later
@@ -19,7 +20,7 @@ const mockData = {
     }
 };
 
-const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
+const Metrics: React.FC<MetricsProps> = ({ isDarkMode, periscopeDips }) => {
 
     const [metricsData, setMetricsData] = useState({
         totalVisits: 0,
