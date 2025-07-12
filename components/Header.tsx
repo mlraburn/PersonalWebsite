@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 interface HeaderProps {
     isDarkMode: boolean;
     setIsDarkMode: (value: boolean) => void;
-    //onActivatePeriscope: () => void;
+    onActivatePeriscope: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
+const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode, onActivatePeriscope }) => {
     // sun and mooon animation completion states
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -32,6 +32,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
         setTimeout(() => setIsShaking(false), 500); // stop shaking after 300 ms
 
         // Activate the Periscope
+        onActivatePeriscope();
     };
 
     return (
@@ -43,6 +44,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
                         className={`w-8 h-8 cursor-pointer hover:text-amber-300 transition-colors ${isShaking ? 'animate-shake': ''}`}
                         fill="currentColor"
                         viewBox="0 0 64 64"
+                        id="anchor-svg"
                         onClick={anchorClick}
                     >
                         <path d="m28.226 6.682c-.142.078-.412.236-.763.465.798.713 1.457 1.483 1.967 2.303.141-.086.229-.134.232-.135.341-.186.598-.503.711-.887.113-.383.07-.787-.121-1.139-.378-.701-1.285-1.006-2.026-.607z"/>

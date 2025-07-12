@@ -16,11 +16,22 @@ export default function HomePage(): React.JSX.Element {
         fetch('/api/track-visit', { method: 'POST' });
     }, []);
 
+    // Periscope Activation Function and States
+    const [isPeriscopeActive, setIsPeriscopeActive] = useState(false);
+
+    const activatePeriscope = () => {
+        setIsPeriscopeActive(true);
+    };
+
   return (
       <>
-          <Periscope isDarkMode={isDarkMode}/>
+          <Periscope isDarkMode={isDarkMode} isActive={isPeriscopeActive}/>
           <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
-            <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+            <Header
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                onActivatePeriscope={activatePeriscope}
+            />
             <Hero isDarkMode={isDarkMode} />
             {/*Add section for tech stack*/}
             <About isDarkMode={isDarkMode} />
