@@ -2,11 +2,28 @@ import React from 'react';
 
 interface HeroProps {
     isDarkMode: boolean;
-    onViewProjects?: () => void;
-    onDownloadResume?: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ isDarkMode, onViewProjects, onDownloadResume }) => {
+const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
+
+    // Resume Button Click Function
+    const resumeDownloadButton = async () => {
+        try {
+            // fetch api endpoint to add record of download
+            await fetch('/api/track-downloads', { method: 'POST' });
+        } catch (error) {
+            console.error('Failed to track download of resume:', error);
+        }
+
+        // simulate a user clicking an a tag
+        const link = document.createElement('a');
+        link.href = '/resume/Matt_Raburn_Resume.pdf';
+        link.download = 'Matt_Raburn_Resume.pdf';
+        document.body.appendChild(link); // add invisible a tag
+        link.click();  // programmed click
+        document.body.removeChild(link);  // clean up
+    };
+
     return (
       // Semantic portion
       <main id="hero" className={`${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
@@ -37,13 +54,12 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode, onViewProjects, onDownloadResum
                           >
                               View Projects
                           </a>
-                          <a
-                              href="/resume/Matt%20Raburn%20-%20Resume.pdf"
-                              download="Matt_Raburn_Resume.pdf"
+                          <button
+                              onClick={resumeDownloadButton}
                               className={`inline-block border-2 ${isDarkMode ? 'border-amber-600 text-amber-600 hover:bg-amber-600' : 'border-slate-800 text-slate-800 hover:bg-slate-800'} hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors text-center`}
                           >
                               Download Resume
-                          </a>
+                          </button>
                       </div>
                   </div>
 

@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         const db = client.db('portfolio-metrics');
         const collection = db.collection('page-views');
 
-        // Count total visits
+        /* Count All Time Visits */
         const totalVisits = await collection.countDocuments();
 
         /* Count unique visitors of all time */
@@ -59,13 +59,22 @@ export default async function handler(req, res) {
             }
         ]).toArray();
 
+        // get the length for the count
         const uniqueVisitors24HoursSize = uniqueVisitors24Hours.length;
 
-        // set response.json to totalVisits key with value of totalVisits
+        /* Get Number of Downloads */
+        const downloadCollection = db.collection('resume-downloads')
+
+        // get download count WARNING THIS WILL BE DIFFERENT IF WE TRY TO ADD OTHER DOWNLOADS LATER
+        const resumeDownloadCount = downloadCollection.countDocuments();
+
+
+        /* set response json */
         res.status(200).json({
             totalVisits,
             uniqueVisitors,
-            uniqueVisitors24HoursSize
+            uniqueVisitors24HoursSize,
+            resumeDownloadCount
         });
 
     } catch (error) {

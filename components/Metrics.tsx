@@ -24,7 +24,8 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
     const [metricsData, setMetricsData] = useState({
         totalVisits: 0,
         uniqueVisits: 0,
-        uniqueRecentVisits: 0
+        uniqueRecentVisits: 0,
+        resumeDownloadCount: 0
     });
 
     useEffect(() => {
@@ -36,7 +37,8 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                     ...prev,
                     totalVisits: data.totalVisits,
                     uniqueRecentVisits: data.uniqueVisitors24HoursSize,
-                    uniqueVisits: data.uniqueVisitors
+                    uniqueVisits: data.uniqueVisitors,
+                    resumeDownloadCount: data.resumeDownloadCount
                 }));
             } catch (error) {
                 console.error('Failed to fetch metrics', error);
@@ -115,9 +117,9 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode }) => {
                                     <span className="ml-2 text-sm font-courier font-semibold">query --metric=resume_downloads</span>
                                 </div>
                                 <div className="text-5xl font-bold mt-3">
-                                    {mockData.resumeDownloads}
+                                    {metricsData.resumeDownloadCount.toLocaleString()}
                                 </div>
-                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ PDF resume downloads</div>
+                                <div className="text-xs text-gray-400 mt-1 font-courier font-semibold">↳ All-time resume downloads</div>
                             </div>
 
                             {/* Browser Distribution */}
