@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
 
     const anchorClick = () => {
         setIsShaking(true); // shake the anchor
-        setTimeout(() => setIsShaking(false), 300); // stop shaking after 300 ms
+        setTimeout(() => setIsShaking(false), 500); // stop shaking after 300 ms
 
         // Activate the Periscope
     };
@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
                 {/* Logo with Anchor */}
                 <div className="flex items-center space-x-3 text-white">
                     <svg
-                        className="w-8 h-8 cursor-pointer hover:text-amber-300 transition-colors"
+                        className={`w-8 h-8 cursor-pointer hover:text-amber-300 transition-colors ${isShaking ? 'animate-shake': ''}`}
                         fill="currentColor"
                         viewBox="0 0 64 64"
                         onClick={anchorClick}
@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode }) => {
                         <path d="m35.561 51.148c.151-.235.276-.472.41-.709-.892-.419-1.893-.702-2.991-.841-.419.636-.918 1.261-1.496 1.875.819.307 1.78.79 2.704 1.487.518-.594.977-1.198 1.373-1.812z"/>
                         <path d="m24.116 16.471c.033-.201.086-.391.134-.584-.731-.657-1.618-1.2-2.645-1.624-.184.537-.344 1.091-.443 1.681-.116.697-.144 1.415-.122 2.136l2.995-.248c-.01-.442.006-.889.081-1.361z"/>
                     </svg>
-                    <a href="#hero" className="text-xl font-bold tracking-wider hover:text-amber-300 transition-colors">Matt Raburn</a>
+                    <a href="#top" className="text-xl font-bold tracking-wider hover:text-amber-300 transition-colors">Matt Raburn</a>
                 </div>
 
                 {/* Navigation */}
