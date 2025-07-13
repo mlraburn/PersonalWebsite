@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import {MongoClient} from 'mongodb';
 
 const uri = process.env.MONGODB_URI;  // gets enrionmental variable to connect to mongoDB
 const client = new MongoClient(uri);  // gets client_page_views object
@@ -28,13 +28,10 @@ export default async function handler(req, res) {
                         ip: "$ip"
                     }
                 }
-            },
-            {
-                $count: "uniqueCount"
             }
         ]).toArray();
 
-        const uniqueVisitors = uniqueVisits[0].uniqueCount;
+        const uniqueVisitors = uniqueVisits.length;
 
 
         /* Count unique-ish visitors in the last 24 hours */
@@ -69,12 +66,40 @@ export default async function handler(req, res) {
         // get download count WARNING THIS WILL BE DIFFERENT IF WE TRY TO ADD OTHER DOWNLOADS LATER
         const resumeDownloadCount = await downloadCollection.countDocuments();
 
+        /* Get Platform Distribution */
+        const platformCounts = {};
+
+        // use unique visits results from prior query as start
+        uniqueVisits.forEach(group => {
+            const userAgent = group._id.userAgent;
+            let platform = 'Other';
+
+            if (/Linux.*Android/i.test(userAgent) || /iPhone|iPad/i.test(userAgent)) {
+                platform = 'Mobile';
+            } else if (/Linux/i.test(userAgent)) {
+                platform = 'Linux';
+            } else if (/Mac/i.test(userAgent)) {
+                platform = 'Mac';
+            } else if (/Windows/i.test(userAgent)) {
+                platform = 'Windows';
+            }
+
+            platformCounts[platform] = (platformCounts[platform] || 0) + 1;
+        });
+
+        const platformPercentages = {};
+
+        Object.entries(platformCounts).forEach(([platform, count]) => {
+            platformPercentages[platform] = Math.ceil((count / uniqueVisitors) * 100);
+        });
+
         /* set response json */
         res.status(200).json({
             totalVisits,
             uniqueVisitors,
             uniqueVisitors24HoursSize,
-            resumeDownloadCount
+            resumeDownloadCount,
+            platformPercentages
         });
 
     } catch (error) {

@@ -18,6 +18,8 @@ export default function HomePage(): React.JSX.Element {
 
     // Periscope Activation Function and States
     const [isPeriscopeActive, setIsPeriscopeActive] = useState(false);
+    const [periscopeStatus, setPeriscopeStatus] = useState('STANDBY');
+    const [periscopeDips, setPeriscopeDips] = useState(0);
 
     const activatePeriscope = () => {
         setIsPeriscopeActive(true);
@@ -25,7 +27,12 @@ export default function HomePage(): React.JSX.Element {
 
   return (
       <>
-          <Periscope isDarkMode={isDarkMode} isActive={isPeriscopeActive}/>
+          <Periscope
+              isDarkMode={isDarkMode}
+              isActive={isPeriscopeActive}
+              onStatusChange={setPeriscopeStatus}
+              onDipCountChange={setPeriscopeDips}
+          />
           <div className={`min-h-screen ${isDarkMode ? 'bg-slate-900' : 'bg-amber-50'}`}>
             <Header
                 isDarkMode={isDarkMode}
@@ -37,7 +44,12 @@ export default function HomePage(): React.JSX.Element {
             <About isDarkMode={isDarkMode} />
             <Experience isDarkMode={isDarkMode} />
             <Projects isDarkMode={isDarkMode} />
-            <Metrics isDarkMode={isDarkMode} />
+            <Metrics
+                isDarkMode={isDarkMode}
+                isPeriscopeActive={isPeriscopeActive}
+                periscopeStatus={periscopeStatus}
+                periscopeDips={periscopeDips}
+            />
             <Contact isDarkMode={isDarkMode} />
             {/*<Footer />*/}
           </div>

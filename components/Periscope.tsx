@@ -3,14 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 interface PeriscopeProps {
     isDarkMode: boolean;
     isActive: boolean;
+    onStatusChange: (status: string) => void;
+    onDipCountChange: (count: number) => void;
 }
 
-const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive }) => {
+const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive, onStatusChange, onDipCountChange }) => {
     const [periscopePosition, setPeriscopePosition] = useState({ x: -100 , y: -100});
     const mousePosition = useRef({x: 0, y: 0});
     const animationRef = useRef<number | undefined>(undefined);
     const [dipAmount, setDipAmount] = useState(50);
     const hasMouseMoved = useRef(false);
+    const [status, setStatus] = useState('STANDBY');
+    const [dipCount, setDipCount] = useState(0);
 
     // set inital position of the periscope svg
     const setInitialPosition = () => {
@@ -40,12 +44,13 @@ const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive }) => {
             setDipAmount(0);
         }, 500);
 
-        setTimeout (() => {
+        // set up mouse move handler
+        const handleMouseMove = (e: MouseEvent) => {
+            hasMouseMoved.current = true;
+            mousePosition.current = {x: e.clientX, y: e.clientY};
+        };
 
-            const handleMouseMove = (e: MouseEvent) => {
-                hasMouseMoved.current = true;
-                mousePosition.current = {x: e.clientX, y: e.clientY};
-            };
+        setTimeout (() => {
 
             // animation of periscope
             const animatePeriscope = () => {
@@ -63,6 +68,9 @@ const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive }) => {
 
                     if (hasMouseMoved.current) {
                         if (distance > 100) {
+                            // set status to HUNTING
+                            setStatus('HUNTING');
+
                             // calculate the degrees of the angle to the mouse position
                             const angle = Math.atan2(deltaY, deltaX);
                             const stepSize = .5;
@@ -73,9 +81,15 @@ const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive }) => {
                         }
 
                         if (distance < 50) {
+                            // set status to DIVE
+                            setStatus('DIVE');
+
                             // periscope disappears
                             setDipAmount(20);
                         } else {
+                            // set status to MONITOR
+                            setStatus('MONITOR');
+
                             // outside of 50 distance
                             // periscope re-appears
                             setDipAmount(0);
@@ -99,6 +113,23 @@ const Periscope: React.FC<PeriscopeProps> = ({ isDarkMode, isActive }) => {
             }
         };
     }, [isActive]);
+
+    // Create Status change on any status change
+    useEffect(() => {
+        onStatusChange(status);
+    }, [status, onStatusChange]);
+
+    // Increment Dip Count whenever DIVE happens
+    useEffect(() => {
+        if (status == 'DIVE') {
+            setDipCount(prev => prev + 1)
+        }
+    }, [status]);
+
+    // pass up dipCount using interface
+    useEffect(() => {
+        onDipCountChange(dipCount);
+    }, [dipCount, onDipCountChange]);
 
     return (
         <div
