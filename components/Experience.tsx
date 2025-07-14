@@ -16,7 +16,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                     {/* Timeline Container */}
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className={`absolute top-18 left-0 right-8 h-1 ${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'}`}>
+                        <div className={`hidden md:block absolute top-18 left-0 right-8 h-1 ${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'}`}>
                             <div className={`absolute -right-2 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-t-4 border-b-4 border-transparent ${isDarkMode ? 'border-l-slate-600' : 'border-l-slate-300'}`}></div>
                         </div>
 
@@ -128,12 +128,15 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                             {/* NRO Current */}
                             <div className="relative group">
                                 <div className="flex flex-col items-center">
-                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative`}>
+                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative animate-pulse`}>
                                         🛰️
                                     </div>
                                     <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} text-center mb-2`}>Developer & PM</h3>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NRO</p>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>2022 - September 2025</p>
+                                    <div className={`mt-2 px-2 py-1 rounded text-xs font-bold ${isDarkMode ? 'bg-slate-600 text-white' : 'bg-slate-800 text-white'}`}>
+                                        CURRENT
+                                    </div>
                                 </div>
 
                                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">

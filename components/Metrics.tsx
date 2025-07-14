@@ -7,21 +7,6 @@ interface MetricsProps {
     periscopeDips: number;
 }
 
-// Mock data - replace with real data later
-const mockData = {
-    totalVisits: 15847,
-    uniqueVisits24h: 342,
-    resumeDownloads: 127,
-    periscopeDips: 2893,
-    browserTypes: {
-        desktop: 45,
-        mobile: 35,
-        tablet: 12,
-        linux: 5,
-        mac: 3
-    }
-};
-
 const Metrics: React.FC<MetricsProps> = ({ isDarkMode, isPeriscopeActive, periscopeStatus, periscopeDips }) => {
 
     const [metricsData, setMetricsData] = useState({
@@ -148,7 +133,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode, isPeriscopeActive, perisc
                                         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
                                             {Object.entries(metricsData.platformMetrics).map(([type, percentage]) => (
                                                 <div key={type} className="border border-gray-600 rounded p-3">
-                                                    <div className="text-3xl font-bold mb-1">{percentage}%</div>
+                                                    <div className="text-3xl font-bold mb-1">{percentage as number}%</div>
                                                     <div className="text-xs uppercase tracking-wider text-gray-400 font-courier font-semibold">{type}</div>
                                                 </div>
                                             ))}

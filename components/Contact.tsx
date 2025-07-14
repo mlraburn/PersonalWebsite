@@ -8,7 +8,7 @@ const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
     return (
         <section id="contact" className={`py-10 ${isDarkMode ? 'bg-slate-800' : 'bg-slate-800'} text-white`}>
             <div className="container mx-auto px-6">
-                <h2 className={`text-3xl lg:text-4xl font-bold mb-6 text-center ${isDarkMode ? 'text-white' : 'text-white'}`}>
+                <h2 className={`text-3xl lg:text-4xl font-bold mb-4 text-center ${isDarkMode ? 'text-white' : 'text-white'}`}>
                     Contact
                 </h2>
 

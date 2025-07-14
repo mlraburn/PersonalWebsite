@@ -50,7 +50,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                 </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Matt's March Madness</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allow users to
+                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allows users to
                                     create brackets based on ELO scores and save their brackets for later.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -129,8 +129,8 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                 </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explore</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Lightweight CLI JSON navigator: Python package allowing user to navigate JSON's and
-                                    dictionaries like file tree's.
+                                    Lightweight CLI JSON navigator: Python package allows users to navigate JSONs and
+                                    dictionaries like a file tree.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
@@ -210,7 +210,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                 </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>Matt's March Madness</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allow users to
+                                    Simulate, save, and see the latest NCAA tournament brackets: Web app allows users to
                                     create brackets based on ELO scores and save their brackets for later.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -289,8 +289,8 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                                 </a>
                                 <h3 className={`text-xl font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} mb-3`}>JSON Explore</h3>
                                 <p className={`${isDarkMode ? 'text-gray-300' : 'text-slate-600'} mb-4`}>
-                                    Lightweight CLI JSON navigator: Python package allowing user to navigate JSON's and
-                                    dictionaries like file tree's.
+                                    Lightweight CLI JSON navigator: Python package allows users to navigate JSONs and
+                                    dictionaries like a file tree.
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className={`px-2 py-1 text-xs rounded ${isDarkMode ? 'bg-slate-600 text-gray-300' : 'bg-slate-200 text-slate-700'}`}>Python</span>
