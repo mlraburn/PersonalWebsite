@@ -29,7 +29,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                             : 'bg-gradient-to-l from-white to-transparent'
                     }`}></div>
                     {/* Scrolling Container */}
-                    <div className="flex animate-infinite-scroll gap-8" style={{ width: '250%' }}>
+                    <div className="flex animate-infinite-scroll gap-8 w-[750%] md:w-[250%]">
                         {/* First Set Div*/}
                         <div className="flex gap-8 w-1/2">
                             {/* Matt's March Madness */}
