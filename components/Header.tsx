@@ -9,6 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode, onActivatePeriscope }) => {
     // sun and mooon animation completion states
     const [isAnimating, setIsAnimating] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const darkLightModeToggle = () => {
         setIsAnimating(true);
@@ -73,29 +74,63 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode, onActivatePe
                 </div>
 
                 {/* Navigation */}
-                <div className="hidden md:flex space-x-8 text-white">
+                <div className="hidden md:flex items-center space-x-8 text-white">
                     <a href="#about" className="hover:text-amber-300 transition-colors font-medium">About</a>
                     <a href="#experience" className="hover:text-amber-300 transition-colors font-medium">Experience</a>
                     <a href="#projects" className="hover:text-amber-300 transition-colors font-medium">Projects</a>
                     <a href="#metrics" className="hover:text-amber-300 transition-colors font-medium">Metrics</a>
                     <a href="#contact" className="hover:text-amber-300 transition-colors font-medium">Contact</a>
+
+                    {/* Dark mode toggle - shows on all screen sizes */}
                     <button
                         onClick={() => darkLightModeToggle()}
                         className="text-white cursor-pointer hover:text-amber-200 transition-colors ml-4 relative">
                         {/*Animation Div*/}
-                        <div // animate-reverse-spin is a custom animation in globall.css
+                        <div
                             className={`transition-transform ${isAnimating ? 'animate-reverse-spin' : ''}`}
                             style={{
                                 transformOrigin: '50% calc(100% + 1rem)',
                             }}
                         >
                             {isDarkMode ? (
-                                // Display sun when in dark mode
                                 <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                                 </svg>
                             ) : (
-                                // Display moon when in light mode
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                                </svg>
+                            )}
+                        </div>
+                    </button>
+
+                </div>
+                {/* Mobile buttons */}
+                <div className="md:hidden flex items-center space-x-4">
+                    <button
+                        className="text-white"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    {/* Dark mode toggle */}
+                    <button
+                        onClick={() => darkLightModeToggle()}
+                        className="text-white cursor-pointer hover:text-amber-200 transition-colors relative">
+                        <div
+                            className={`transition-transform ${isAnimating ? 'animate-reverse-spin' : ''}`}
+                            style={{
+                                transformOrigin: '50% calc(100% + 1rem)',
+                            }}
+                        >
+                            {isDarkMode ? (
+                                <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                                </svg>
+                            ) : (
                                 <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="hover:fill-amber-200 size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                                 </svg>
@@ -103,13 +138,6 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, setIsDarkMode, onActivatePe
                         </div>
                     </button>
                 </div>
-
-                {/* Mobile menu button */}
-                <button className="md:hidden text-white">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </nav>
         </header>
     );

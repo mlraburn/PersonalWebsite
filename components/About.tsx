@@ -133,7 +133,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                             </div>
                         </div>
                         {/* Legend */}
-                        <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs">
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
                             <div className="flex items-center gap-2">
                                 <div className={`w-3 h-3 rounded-full ${isDarkMode ? 'bg-blue-600' : 'bg-blue-100'}`}></div>
                                 <span className={isDarkMode ? 'text-gray-300' : 'text-slate-600'}>Languages</span>
