@@ -70,7 +70,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode, isPeriscopeActive, perisc
                         </div>
 
                         {/* Terminal Content */}
-                        <div className="p-8 font-mono flex gap-8">
+                        <div className="p-8 font-mono flex flex-col lg:flex-row gap-8">
 
                             {/* Left Side Normal Terminal */}
                             <div className="flex-1">
@@ -151,7 +151,7 @@ const Metrics: React.FC<MetricsProps> = ({ isDarkMode, isPeriscopeActive, perisc
                             </div>
 
                             {/* Right Side Periscope Log */}
-                            <div className="w-70">
+                            <div className="w-full lg:w-70">
                                 {/* Periscope Log */}
                                 <div className={`text-s font-courier font-semibold ${isDarkMode ? 'text-amber-500' : 'text-amber-400'} whitespace-pre`}>
                                     <div>╔═══════════════════════════╗</div>
