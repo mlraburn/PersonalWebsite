@@ -128,7 +128,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                             {/* NRO Current */}
                             <div className="relative group" tabIndex={0}>
                                 <div className="flex flex-col items-center">
-                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative animate-pulse`}>
+                                    <div className={`w-16 h-16 ${isDarkMode ? 'bg-slate-500' : 'bg-slate-800'} rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg z-10 relative`}>
                                         🛰️
                                     </div>
                                     <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} text-center mb-2`}>Developer & PM</h3>
