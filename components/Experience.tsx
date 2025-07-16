@@ -56,7 +56,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                         ⚓
                                     </div>
                                     <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} text-center mb-2`}>Division Officer</h3>
-                                    <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NIOC Georgia</p>
+                                    <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NIOC Georgia | NSA</p>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>2013 - 2016</p>
                                 </div>
 
@@ -81,7 +81,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                                         👥
                                     </div>
                                     <h3 className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-slate-800'} text-center mb-2`}>Department Head</h3>
-                                    <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NIOC Georgia</p>
+                                    <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-slate-600'} text-center mb-1`}>NIOC Georgia | NSA</p>
                                     <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>2016 - 2019</p>
                                 </div>
 
